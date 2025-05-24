@@ -1,0 +1,37 @@
+<div class="w-100 vh-100" style="overflow-y: auto; background-color: #101010">
+  <div class="container">
+  <h1 class="text-center p-4 text-white">RAG Chatbot</h1>
+  <div class="d-flex flex-row justify-content-start align-items-center gap-3">
+    <input type="text" class="flex-grow-1 form-control" placeholder="Ask a question ..." [(ngModel)]="queryDto.query">
+    <button class="btn btn-primary d-flex flex-row justify-content-center align-items-center gap-2" (click)="chat()">
+      @if(searchTheResponse){
+        <mat-spinner diameter="20" class="white-spinner"></mat-spinner>
+      }
+      <b>Send</b>
+    </button>
+  </div>
+  <br>
+  <div class="text-white p-3 rounded mb-5" style="background-color: #303030">
+    <h5 class="text-white">Response:</h5>
+    @if (!responseDto.response) {
+    @if(searchTheResponse){
+        <div>
+          <p>
+            Please wait the response ...
+          </p>
+          <mat-spinner diameter="30" class="white-spinner"></mat-spinner>
+        </div>
+    }
+
+    } @else {
+    <markdown [data]="responseDto.response"></markdown>
+      <div markdown>
+       {{responseTypewriter}}
+      </div>
+    }
+  </div>
+  </div>
+</div>
+
+
+
