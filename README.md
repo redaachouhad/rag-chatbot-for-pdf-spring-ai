@@ -1,5 +1,7 @@
 # 🧠 RAG Chatbot for PDF Documents
 
+![Screenshot](./screenshot.png)
+
 A full-stack RAG (Retrieval-Augmented Generation) chatbot that allows users to ask questions about the content of a PDF document. The system uses **Spring Boot + Spring AI + Ollama + Vector Store** on the backend and **Angular** on the frontend.
 
 ---
